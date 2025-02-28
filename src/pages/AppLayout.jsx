@@ -8,7 +8,6 @@ export default function AppLayout(){
             <SideBar/>
             <Map/>
 
-
         </div>
     )
 }
