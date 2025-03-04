@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import CityItem from "./CityItem.jsx";
 import styles from "./CityList.module.css";
+import { useCities } from "../context/CitiesContext.jsx";
 
-const CityList = ({cities, isLoading}) => {
-    if (isLoading) return <p>Loading...</p>;
+const CityList = () => {
+
+    const  {cities, Loading} = useCities();
+    if (Loading) return <p>Loading...</p>;
     if (cities.length < 0) return <p>There is no cities</p>
     return (
         <ul className={styles.cityList}>
